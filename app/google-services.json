@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "720533513277",
+    "project_id": "tcswom",
+    "storage_bucket": "tcswom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720533513277:android:d56af8a08807ccb5573654",
+        "android_client_info": {
+          "package_name": "tw.edu.pu.s1114859.firebase_test2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7lXalzgMsUC2ndI0rLRwRYmymoO_HiQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720533513277:android:86f018bb4be93c41573654",
+        "android_client_info": {
+          "package_name": "tw.edu.pu.s1114859.tcswom_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7lXalzgMsUC2ndI0rLRwRYmymoO_HiQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
