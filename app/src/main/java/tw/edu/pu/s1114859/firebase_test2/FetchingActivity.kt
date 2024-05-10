@@ -46,6 +46,7 @@ class FetchingActivity : AppCompatActivity() {
                         //intent
                         val intent =Intent(this@FetchingActivity,FoundationDetailActivity::class.java)
                         //put extras
+                        startActivity(intent)
 
                         intent.putExtra("fd",contacts[position])
                         startActivity(intent)
