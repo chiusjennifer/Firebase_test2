@@ -34,7 +34,8 @@ class FetchingActivity : AppCompatActivity() {
                         data["mail"].toString(),data["address"].toString(),
                         data["district"].toString(),data["url"].toString(),
                         data["updated"].toString(),data["serve_ob"].toString(),
-                        data["category"].toString(),data["age_ob"].toString()
+                        data["category"].toString(),data["age_ob"].toString(),
+                        data["geo"].toString()
                     )
                     contacts.add(obj)
                 }

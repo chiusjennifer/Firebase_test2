@@ -2,6 +2,7 @@ package tw.edu.pu.s1114859.firebase_test2
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -42,8 +43,10 @@ class FoundationDetailActivity : AppCompatActivity() {
         age.text = contract.fdage
 
 
+
         mapBtn.setOnClickListener {
-            val intent=Intent(this,MapActivity::class.java)
+            val intent=Intent(Intent.ACTION_VIEW)
+            intent.data= Uri.parse("geo:"+contract.geo)
             startActivity(intent)
         }
         homeBtn.setOnClickListener {

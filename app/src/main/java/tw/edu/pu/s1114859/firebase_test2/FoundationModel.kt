@@ -13,5 +13,6 @@ data class FoundationModel(
     var fdupdated:String?=null,
     var fdob:String?=null,
     var fdcategory:String?=null,
-    var fdage:String?=null
+    var fdage:String?=null,
+    var geo:String?=null
 ):Serializable
