@@ -1,15 +1,22 @@
 package tw.edu.pu.s1114859.firebase_test2
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlin.contracts.contract
 
 class FoundationDetailActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_foundation_details)
+        val mapBtn:ImageButton=findViewById(R.id.mapBtn)
+        val homeBtn:ImageButton=findViewById(R.id.homeBtn)
         val name:TextView=findViewById(R.id.dataname)
         val phone:TextView=findViewById(R.id.dataphone)
         val fax:TextView=findViewById(R.id.datafax)
@@ -20,44 +27,31 @@ class FoundationDetailActivity : AppCompatActivity() {
         val server_ob:TextView=findViewById(R.id.dataob)
         val category:TextView=findViewById(R.id.datacategory)
         val age:TextView=findViewById(R.id.datage)
+        val contract:FoundationModel
 
-        val contactsString = intent.getStringExtra("fd")
-        // 解開資料
-        val contactsList = mutableListOf<FoundationModel>()
-        if (!contactsString.isNullOrEmpty()) {
-            val contactsArray = contactsString.split(",")
-            for (contactString in contactsArray) {
-                val contactInfo = contactString.split(";")
-                if (contactInfo.size == 11) { // 確認每個物件都有11個屬性
-                    val foundationModel = FoundationModel(
-                        contactInfo[0],
-                        contactInfo[1],
-                        contactInfo[2],
-                        contactInfo[3],
-                        contactInfo[4],
-                        contactInfo[5],
-                        contactInfo[6],
-                        contactInfo[7],
-                        contactInfo[8],
-                        contactInfo[9],
-                        contactInfo[10]
-                    )
-                    contactsList.add(foundationModel)
-                }
-            }
+       contract= intent.extras?.get("fd") as FoundationModel
+        name.text = contract.fdname
+        phone.text = contract.fdphone
+        fax.text = contract.fdfax
+        mail.text = contract.fdmail
+        district.text = contract.fdistrict.toString().trim()
+        link.text = contract.fdlink
+        updated.text = contract.fdupdated
+        server_ob.text = contract.fdob
+        category.text = contract.fdcategory
+        age.text = contract.fdage
+
+
+        mapBtn.setOnClickListener {
+            val intent=Intent(this,MapActivity::class.java)
+            startActivity(intent)
         }
-        // 顯示解開後的細項
-        for (contact in contactsList) {
-            name.text = contact.fdname
-            phone.text = contact.fdphone
-            fax.text = contact.fdfax
-            mail.text = contact.fdmail
-            district.text = contact.fdistrict
-            link.text = contact.fdlink
-            updated.text = contact.fdupdated
-            server_ob.text = contact.fdob
-            category.text = contact.fdcategory
-            age.text = contact.fdage
+        homeBtn.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+
         }
+
+
     }
 }

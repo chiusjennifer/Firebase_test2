@@ -1,5 +1,7 @@
 package tw.edu.pu.s1114859.firebase_test2
 
+import java.io.Serializable
+
 data class FoundationModel(
     var fdname: String? = null,
     var fdphone: String? = null,
@@ -12,4 +14,4 @@ data class FoundationModel(
     var fdob:String?=null,
     var fdcategory:String?=null,
     var fdage:String?=null
-)
+):Serializable
