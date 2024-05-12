@@ -50,22 +50,14 @@ class HomeActivity : AppCompatActivity() {
                 if (documents.isEmpty) {
                     resultTextView.text = "找不到匹配的項目"
                 } else {
-                    for (document in documents) {
-                        val data =document.data
-                        obj = FoundationModel(data["Fd_name"].toString(),
-                            data["phone"].toString(),data["fax"].toString(),
-                            data["mail"].toString(),data["address"].toString(),
-                            data["district"].toString(),data["url"].toString(),
-                            data["updated"].toString(),data["serve_ob"].toString(),
-                            data["category"].toString(),data["age_ob"].toString(),
-                            data["geo"].toString()
-                        )
-                        contacts.add(obj)
+                        val stringBuilder = StringBuilder()
+                        for (document in documents) {
+                            val data = document.data
+                            val result = data["Fd_name"].toString()
+                            stringBuilder.append("$result,")
                     }
-                    val intent=Intent(this,FoundationDetailActivity::class.java)
-                    intent
+                        resultTextView.text = "搜尋結果為:"+stringBuilder.toString()+"請至列表查看\n"
                     }
-
                 }
             .addOnFailureListener { exception ->
                 resultTextView.text = "搜尋失敗: $exception"
