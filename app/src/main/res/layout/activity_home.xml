@@ -10,7 +10,7 @@
         android:id="@+id/simpleSearchView"
         android:layout_width="330sp"
         android:layout_height="65sp"
-        android:queryHint="請輸入關鍵字"
+        android:queryHint="請輸入想搜尋的殘障類別"
         app:layout_constraintStart_toEndOf="@+id/listBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
