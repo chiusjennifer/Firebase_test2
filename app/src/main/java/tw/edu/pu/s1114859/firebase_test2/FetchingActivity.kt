@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.ktx.firestore
@@ -16,10 +17,11 @@ class FetchingActivity : AppCompatActivity() {
     val db =Firebase.firestore
     var obj = FoundationModel()
     var contacts= mutableListOf<FoundationModel>()
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fetching)
-
+        val homeBtn:ImageButton=findViewById(R.id.homeBtn)
 
         mRecyclerView = findViewById(R.id.rvFd)
         mRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -54,7 +56,12 @@ class FetchingActivity : AppCompatActivity() {
                 })
 
             }
+        homeBtn.setOnClickListener {
+            val intent=Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 }
 
 

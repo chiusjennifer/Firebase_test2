@@ -234,21 +234,34 @@
 
     <ImageButton
         android:id="@+id/mapBtn"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         android:src="@drawable/map"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/homeBtn"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/homeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="58dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/returnBtn"
+        app:layout_constraintStart_toEndOf="@+id/mapBtn"
+        app:srcCompat="@drawable/home"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/returnBtn"
+        android:layout_width="54dp"
+        android:layout_height="57dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/home"
+        app:layout_constraintStart_toEndOf="@+id/homeBtn"
+        app:srcCompat="@drawable/returnpage"
         tools:ignore="SpeakableTextPresentCheck" />
 
 

@@ -18,6 +18,7 @@ class FoundationDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_foundation_details)
         val mapBtn:ImageButton=findViewById(R.id.mapBtn)
         val homeBtn:ImageButton=findViewById(R.id.homeBtn)
+        val returnBtn:ImageButton=findViewById(R.id.returnBtn)
         val name:TextView=findViewById(R.id.dataname)
         val phone:TextView=findViewById(R.id.dataphone)
         val fax:TextView=findViewById(R.id.datafax)
@@ -53,6 +54,10 @@ class FoundationDetailActivity : AppCompatActivity() {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
 
+        }
+        returnBtn.setOnClickListener {
+            val intent=Intent(this,FetchingActivity::class.java)
+            startActivity(intent)
         }
 
 

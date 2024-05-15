@@ -9,15 +9,16 @@
     <SearchView
         android:id="@+id/simpleSearchView"
         android:layout_width="330sp"
-        android:layout_height="65sp"
+        android:layout_height="50sp"
         android:queryHint="請輸入想搜尋的殘障類別"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/listBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/listBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="57dp"
+        android:layout_height="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/burgerbar"
